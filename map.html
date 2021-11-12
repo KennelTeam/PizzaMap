@@ -28,19 +28,22 @@
 			cord = ol.proj.fromLonLat([cord_i[1], cord_i[0]])
 
 			features.push(new ol.Feature({
-				'geometry': new ol.geom.Point(cord),
+				geometry: new ol.geom.Point(cord),
 			}))
 		})
 
+		ol.proj.proj4.defs('EPSG:3395', '+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs');
+		ol.proj.proj4.register()
+		ol.proj.get('EPSG:3395').setExtent([-20037508.342789244, -20037508.342789244, 20037508.342789244, 20037508.342789244]);
 		var map = new ol.Map({
 			target: "map",
 			layers: [
 				new ol.layer.Tile({
-					source: new ol.source.OSM()
+					source: new ol.source.OSM(),
 				}),
 				new ol.layer.Heatmap({
 					source: new ol.source.Vector({
-						features: features
+						features: features,
 					}),
 					opacity: 0.5,
 					radius: 12
