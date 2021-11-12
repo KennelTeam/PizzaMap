@@ -36,6 +36,7 @@
 }
 
 .progress-bar-value {
+    position: relative;
     width: 30px;
     top: 25px;
 
@@ -59,8 +60,3 @@
     padding-right: 0;
 
 }
-
-
-
-
-
