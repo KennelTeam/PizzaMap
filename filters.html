@@ -19,37 +19,44 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    
+    <link rel="stylesheet" href="css/filters.css">
 
     <title>кнопки тупа</title>
   </head>
   <body>
     <div class="container">
         <div class="row">
-            <div class="col-2">
+            <div class="fiters-container col-2">
                 <div class="form-group">
-                    <label for="townChoose">Город</label>
-                    <select class="form-select" id="townChoose" aria-label="Floating label select example">
-                        <option selected>Вологда</option>
-                        <option value="1">Москва</option>
-                        <option value="2">Санкт-Перербург</option>
-                        <option value="3">Мухосранск</option>
+                    <label class="town-choose-label label" for="townChoose">Город</label>
+                    <select class="select-list form-select" id="townChoose" aria-label="Floating label select example">
+                        <option class="list-item" selected>Вологда</option>
+                        <option class="list-item" value="1">Москва</option>
+                        <option class="list-item" value="2">Санкт-Перербург</option>
+                        <option class="list-item" value="3">Мухосранск</option>
                     </select>
                 </div>
-                <label for="orderTypeChoose">Вид заказов</label>
-                <select class="form-select" id="orderTypeChoose" aria-label="Floating label select example">
-                    <option selected>Все заказы</option>
-                    <option value="1">Новые</option>
-                    <option value="2">Санкт-Перербург</option>
+                <label class="order-type-label label" for="orderTypeChoose">Вид заказов</label>
+                <select class="select-list form-select" id="orderTypeChoose" aria-label="Floating label select example">
+                    <option class="list-item" selected>Все заказы</option>
+                    <option class="list-item" value="1">Новые</option>
+                    <option class="list-item" value="2">Санкт-Перербург</option>
                 </select>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                    Опоздавшие заказы
-                    </label>
+                <div class="late-order form-check">
+                    <input class="late-orders-checkbox form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="late-orders-label form-check-label" for="flexCheckDefault">Опоздавшие заказы</label>
                 </div>
-                <label for="promoInput">Поиск по промокоду</label>
-                <input class="form-control  " type="text" id="promoInput"/>
-                <label>Период</label>
+                <label class="order-sum-label label" for="orderSum">Сумма заказа</label>
+                <select class="select-list form-select" id="orderSum" aria-label="Floating label select example">
+                    <option class="list-item" selected>На любую сумму</option>
+                    <option class="list-item" value="1">от 500 руб.</option>
+                    <option class="list-item" value="2">от 1000 руб.</option>
+                    <option class="list-item" value="3">от 5000 руб.</option>
+                </select>
+                <label class="promo-input-label label" for="promoInput">Поиск по промокоду</label>
+                <input class="form-control" type="text" id="promoInput"/>
+                <label class="period-label label">Период</label>
                 <!-- <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
                       <input type='text' class="form-control" />
@@ -83,12 +90,12 @@
 
                 <div class="form-group row">
                     <div class="col-sm-10">
-                        <button class="btn btn-primary">Сбросить фильтр</button>
+                        <button class="reset-filter-button btn btn-primary">Сбросить фильтр</button>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Показать</button>
+                        <button type="submit" class="show-button btn btn-primary">Показать</button>
                     </div>
                 </div>
             </div>
