@@ -8,12 +8,6 @@
     <!-- Bootstrap CSS -->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css"> -->
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -32,20 +26,20 @@
                     <label class="town-choose-label label" for="townChoose">Город</label>
                     <select class="select-list form-select" id="townChoose" aria-label="Floating label select example">
                         <option class="list-item" selected>Вологда</option>
-                        <option class="list-item" value="1">Москва</option>
-                        <option class="list-item" value="2">Санкт-Перербург</option>
-                        <option class="list-item" value="3">Мухосранск</option>
+                        <option class="list-item">Москва</option>
+                        <option class="list-item">Санкт-Перербург</option>
+                        <option class="list-item">Мухосранск</option>
                     </select>
                 </div>
                 <label class="order-type-label label" for="orderTypeChoose">Вид заказов</label>
                 <select class="select-list form-select" id="orderTypeChoose" aria-label="Floating label select example">
-                    <option class="list-item" selected>Все заказы</option>
-                    <option class="list-item" value="1">Новые</option>
-                    <option class="list-item" value="2">Санкт-Перербург</option>
+                    <option class="list-item" selected value="all">Все заказы</option>
+                    <option class="list-item" value="new">Новые</option>
+                    <option class="list-item" value="canceled">Отменённые</option>
                 </select>
                 <div class="late-order form-check">
-                    <input class="late-orders-checkbox form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="late-orders-label form-check-label" for="flexCheckDefault">Опоздавшие заказы</label>
+                    <input class="late-orders-checkbox form-check-input" type="checkbox" value="" id="showLateOrders">
+                    <label class="late-orders-label form-check-label" for="showLateOrders">Опоздавшие заказы</label>
                 </div>
                 <label class="order-sum-label label" for="orderSum">Сумма заказа</label>
                 <select class="select-list form-select" id="orderSum" aria-label="Floating label select example">
@@ -57,14 +51,6 @@
                 <label class="promo-input-label label" for="promoInput">Поиск по промокоду</label>
                 <input class="form-control" type="text" id="promoInput"/>
                 <label class="period-label label">Период</label>
-                <!-- <div class="form-group">
-                    <div class='input-group date' id='datetimepicker1'>
-                      <input type='text' class="form-control" />
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                      </span>
-                    </div>
-                </div> -->
                 <input class="form-control" type="text" name="datefilter" value="01.01.2018 - 01.15.2018" />
 
                 <script type="text/javascript">
@@ -90,38 +76,24 @@
 
                 <div class="form-group row">
                     <div class="col-sm-10">
-                        <button class="reset-filter-button btn btn-primary">Сбросить фильтр</button>
+                        <button class="reset-filter-button btn btn-primary" id="clearButton">Сбросить фильтр</button>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-10">
-                        <button type="submit" class="show-button btn btn-primary">Показать</button>
+                        <button type="submit" class="show-button btn btn-primary" id="showButton">Показать</button>
                     </div>
                 </div>
+                
+                <script src="filters.js"></script>
 
-                <script type="text/javascript">
-                    document.querySelector("#showButton").onclick = function() {
-                        let town = $("#townChoose").val()
-                        let showNew = $("#orderTypeChoose").val() == "all" || $("#orderTypeChoose").val() == "new"
-                        let showCanceled = $("#orderTypeChoose").val() == "all" || $("#orderTypeChoose").val() == "canceled"
-                        alert(`Town choosed: ${town};\n showNew: ${showNew}; showCanceled: ${showCanceled}`)
-                    }
-                </script>
             </div>
             <div class="col-9">
                 <label>hello</label>
             </div>
         </div>
-        <!-- Content here -->
-    </div>
-    <!-- Дополнительный JavaScript; выберите один из двух! -->
-
-    <!-- Вариант 1: Bootstrap в связке с Popper -->
+    </div>зке с Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
-    <!-- Вариант 2: Bootstrap JS отдельно от Popper
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-    -->
   </body>
 </html>
