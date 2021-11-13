@@ -51,10 +51,10 @@
                 </div>
                 <label class="order-sum-label label" for="orderSum">Сумма заказа</label>
                 <select class="select-list form-select" id="orderSum" aria-label="Floating label select example">
-                    <option class="list-item" selected>На любую сумму</option>
-                    <option class="list-item" value="1">от 500 руб.</option>
-                    <option class="list-item" value="2">от 1000 руб.</option>
-                    <option class="list-item" value="3">от 5000 руб.</option>
+                    <option class="list-item" selected value="0">На любую сумму</option>
+                    <option class="list-item" value="500">от 500 руб.</option>
+                    <option class="list-item" value="1000">от 1000 руб.</option>
+                    <option class="list-item" value="5000">от 5000 руб.</option>
                 </select>
                 <label class="promo-input-label label" for="promoInput">Поиск по промокоду</label>
                 <input class="promo-input form-control" type="text" id="promoInput"/>
@@ -72,7 +72,7 @@
                         });
 
                         $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-                            $(this).val(picker.startDate.format('MM.DD.YYYY') + ' - ' + picker.endDate.format('MM.DD.YYYY'));
+                            $(this).val(picker.startDate.format('DD.MM.YYYY') + ' - ' + picker.endDate.format('DD.MM.YYYY'));
                         });
 
                         $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
@@ -93,6 +93,7 @@
                     </div>
                 </div>
                 
+                <script src="orders_js.json"></script>
                 <script src="filters.js"></script>
 
             </div>
