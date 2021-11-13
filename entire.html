@@ -9,7 +9,7 @@
 		href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css" type="text/css">
 	<style>
 		.map {
-			height: 700px;
+			height: 500px;
 			width: 100%;
 		}
 	</style>
@@ -27,8 +27,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     
     <link rel="stylesheet" href="css/filters.css">
+    <link rel="stylesheet" href="css/legend.css">
 
-    <title>кнопки тупа</title>
+    <title>Прога тупа</title>
   </head>
   <body>
     <div class="container">
@@ -113,6 +114,38 @@
                 <div id="map" class="map">
                     <button onclick="polygonStatsPressed()">Статистика по области</button>
                     <button onclick="removePolygonStats()">Отмена</button>
+                </div>
+            </div>
+            <div class="legend container" style="margin-top: 40px;">
+                <div class="row">
+                    <div class="progress-bar-block col-sm">
+                        <div class="progress-bar row"></div>
+                        <div class="progress-bar-values row">
+    
+                            <div class="value-1 progress-bar-value col">0</div>
+                            <div class="value-2 progress-bar-value col">644</div>
+                            <div class="value-3 progress-bar-value col">1289</div>
+                            <div class="value-4 progress-bar-value col">1933</div>
+                            <div class="value-5 progress-bar-value col">2578</div>
+    
+                        </div>
+                    </div>
+                    <div class="number-of-orders col-sm">
+                        <div class="number-of-orders-label label col">Количество заказов</div>
+                        <div class="number-of-orders-value value col">0</div>
+                    </div>
+                    <div class="number-of-delay col-sm">
+                        <div class="number-of-delay-label label col">Количество опозданий</div>
+                        <div class="number-of-delay-value value col">0</div>
+                    </div>
+                    <div class="mean-delivery-time col-sm">
+                        <div class="mean-delivery-time-label label col">Ср. время доставки</div>
+                        <div class="mean-delivery-time-value value col">0</div>
+                    </div>
+                    <div class="revenue col-sm">
+                        <div class="revenue-label label col">Выручка</div>
+                        <div class="revenue-value value col">0</div>
+                    </div>
                 </div>
             </div>
         </div>
