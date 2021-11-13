@@ -1,0 +1,51 @@
+<div class="fiters-container">
+    <div class="form-group">
+        <label class="town-choose-label label" for="townChoose">Город</label>
+        <select class="select-list form-select" id="townChoose" aria-label="Floating label select example">
+            <option class="list-item" selected>
+                <div>Вологда</div>
+            </option>
+            <option class="list-item">
+                <div>Москва</div>
+            </option>
+            <option class="list-item">
+                <div>Санкт-Перербург</div>
+            </option>
+            <option class="list-item">
+                <div>Мухосранск</div>
+            </option>
+        </select>
+    </div>
+    <label class="order-type-label label" for="orderTypeChoose">Вид заказов</label>
+    <select class="select-list form-select" id="orderTypeChoose" aria-label="Floating label select example">
+        <option class="list-item" selected value="all">Все заказы</option>
+        <option class="list-item" value="new">Новые</option>
+        <option class="list-item" value="canceled">Отменённые</option>
+    </select>
+    <div class="late-order form-check">
+        <input class="late-orders-checkbox form-check-input" type="checkbox" value="" id="showLateOrders">
+        <label class="late-orders-label form-check-label" for="showLateOrders">Опоздавшие заказы</label>
+    </div>
+    <label class="order-sum-label label" for="orderSum">Сумма заказа</label>
+    <select class="select-list form-select" id="orderSum" aria-label="Floating label select example">
+        <option class="list-item" selected value="0">На любую сумму</option>
+        <option class="list-item" value="500">от 500 руб.</option>
+        <option class="list-item" value="1000">от 1000 руб.</option>
+        <option class="list-item" value="5000">от 5000 руб.</option>
+    </select>
+    <label class="promo-input-label label" for="promoInput">Поиск по промокоду</label>
+    <input class="promo-input form-control" type="text" id="promoInput" />
+    <label class="period-label label">Период</label>
+    <input class="date-filter form-control" type="text" name="datefilter" value="01.11.2021 - 30.11.2021" />
+
+    <div class="form-group row">
+        <div class="col-sm">
+            <button class="reset-filter-button btn" id="clearButton">Сбросить фильтр</button>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm">
+            <button type="submit" class="show-button btn" id="showButton">Показать</button>
+        </div>
+    </div>
+</div>
