@@ -49,7 +49,7 @@
     font-size: 15px;
     line-height: 130%;
 
-    color: var(--ui-gray)
+    color: var(--primary-color)
 }
 
 .select-list:active,
