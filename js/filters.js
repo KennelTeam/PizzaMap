@@ -44,4 +44,21 @@ function setup_filters() {
 
         setData(orders)
     }
+
+    document.querySelector("#clearButton").onclick = function() {
+        let town = $("#townChoose").val()
+        $("#orderTypeChoose").val('all')
+        $("#showLateOrders").prop('checked', false)
+        $("#orderSum").val('0')
+        $("#promoInput").val('')
+        let now = new Date()
+        $("[name='datefilter']").val(`01.01.2000 - ${now.getDate()}.${now.getMonth() + 1}.${now.getFullYear()}`)
+
+        let orders = JSON.parse(input_orders).filter(ord => townDict[ord.locationId] == town)
+
+        showStatistics(orders)
+
+        setData(orders)
+    }
+
 }

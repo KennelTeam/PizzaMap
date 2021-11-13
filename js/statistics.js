@@ -6,7 +6,6 @@ function formatNumber(num) {
 }
 
 function showStatistics(orders_data) {
-    // console.log("stats")
     let numberOrders = orders_data.length
     let numberLate = orders_data.filter(el => { el.lated }).length
     let mediumTime = orders_data.reduce((prev, current) => prev + current.deliveryTime, 0) / numberOrders
