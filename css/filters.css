@@ -41,6 +41,16 @@
     border-radius: 3px;
 }
 
+.date-filter {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 130%;
+
+    color: var(--primary-color);
+}
+
 .late-orders-checkbox {
     border: 1px solid var(--ui-gray);
     box-sizing: border-box;
@@ -57,12 +67,48 @@
     color: var(--primary-color);
 }
 
-.show-button .reset-filter-button {
-    background: var(--ui-blue_01-color);
+.reset-filter-button {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 130%;
+
+    color: var(--ui-blue_01-color);    
+
+    border: 1px solid var(--ui-blue_01-color);
+    box-sizing: border-box;
     border-radius: 3px;
 }
 
+.reset-filter-button:hover {
+    color: var(--ui-blue_01-color);
+    background: var(--ui-blue-02-color);
+}
 
+.show-button {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 130%;
+
+    color: var(--white-color);
+    background: var(--ui-blue_01-color);
+
+    border: 1px solid var(--ui-blue_01-color);
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.show-button:hover {
+    color: var(--white-color);
+    background: #717AB7;
+}
+
+option:hover {
+    box-shadow: 0 0 10px 100px var(--ui-blue-02-color) inset;
+}
 
 
 
