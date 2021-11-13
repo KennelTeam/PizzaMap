@@ -1,4 +1,3 @@
-
 function formatNumber(num) {
     let formatted = String(num % 1000)
     if (num >= 1000) formatted = String(Math.floor(num % 1e6 / 1000)) + " " + formatted
@@ -7,8 +6,9 @@ function formatNumber(num) {
 }
 
 function showStatistics(orders_data) {
+    // console.log("stats")
     let numberOrders = orders_data.length
-    let numberLate = orders_data.filter(el => {el.lated}).length
+    let numberLate = orders_data.filter(el => { el.lated }).length
     let mediumTime = orders_data.reduce((prev, current) => prev + current.deliveryTime, 0) / numberOrders
     let proceeds = orders_data.reduce((prev, current) => prev + current.sum, 0)
     console.log(`number: ${numberOrders}, number late: ${numberLate},\nmedium time: ${mediumTime}, proceeds: ${proceeds}`)
