@@ -20,6 +20,9 @@
     font-weight: bold;
     font-size: 40px;
     line-height: 120%;
+
+    white-space: nowrap;
+
     color: var(--primary-color);
 }
 
