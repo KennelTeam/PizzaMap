@@ -21,11 +21,9 @@
     font-size: 40px;
     line-height: 120%;
 
-    color: var(--primary-color);
-}
-
-.revenue-value {
     white-space: nowrap;
+
+    color: var(--primary-color);
 }
 
 .progress-bar {
