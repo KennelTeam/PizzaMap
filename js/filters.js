@@ -24,6 +24,7 @@ function onShowFiltersButton() {
     let dateInterval = $("[name='datefilter']").val().split(" - ")
     let startDate = parseDate(dateInterval[0])
     let endDate = parseDate(dateInterval[1])
+    endDate.setDate(endDate.getDate() + 1)
 
     function filterOrder(ord) {
         if (townDict[ord.locationId] != town) return false
@@ -33,7 +34,7 @@ function onShowFiltersButton() {
         if (!showCanceled && ord.status == 2) return false
         if (promo != "" && ord.promo != promo) return false
         let date = new Date(ord.date)
-        if (date < startDate || date > endDate) return false
+        if (date <= startDate || date >= endDate) return false
         return true
     }
 
