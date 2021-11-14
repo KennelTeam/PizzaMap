@@ -2,9 +2,7 @@ $(function() {
 
     $('input[name="datefilter"]').daterangepicker({
         autoUpdateInput: true,
-        showDropdowns: true,
-        minYear: 2011,
-        maxYear: new Date().getFullYear(),
+        showButtonPanel: false,
         locale: {
             cancelLabel: 'Clear'
         }
