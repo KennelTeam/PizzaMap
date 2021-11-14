@@ -104,7 +104,7 @@ function setData(orders_data) {
 
         features.push(new ol.Feature({
             geometry: new ol.geom.Point(point_to_wgs84(inp_point.point)),
-            weight: 0.1
+            weight: 0.5
         }))
     })
 
@@ -156,7 +156,7 @@ function setup_OLMap() {
             }),
             new ol.layer.Heatmap({
                 source: heatmapSource,
-                gradient: ["#05BC58", "#B1DF03", "#FFFE01", "#FF3104", "#9A2504"],
+                gradient: heatmapGradient,
                 opacity: 0.9,
                 radius: 10,
                 blur: 5
@@ -182,3 +182,27 @@ function setup_OLMap() {
 
     popupDOM.style.display = "none"
 }
+
+// Set gadient colors for heatmap. Array(<weight>).fill(<color>)
+const heatmapGradient = [].concat(
+    Array(10).fill("#05BC58"),
+    Array(4).fill("#B1DF03"),
+    Array(3).fill("#FFFE01"),
+    Array(2).fill("#FF3104"),
+    Array(1).fill("#9A2504"),
+)
+
+// [
+//     "#05BC58",
+//     "#05BC58",
+//     "#05BC58",
+
+//     "#B1DF03",
+//     "#B1DF03",
+
+//     "#FFFE01",
+
+//     "#FF3104",
+
+//     "#9A2504"
+// ]
