@@ -18,9 +18,46 @@ function polygonStatsPressed() {
         map.removeInteraction(draw)
 
         // insert here function to call bigdata analysisS
-        countStatistics()
-        show_legend(label_cords, {})
+        // console.log(curShowingData.filter())
+        let selected_polygon = new ol.geom.Polygon(event.feature.getGeometry().getCoordinates())
+
+        let cool = []
+
+        curShowingData.forEach(inp_point => {
+            wgs_cord = point_to_wgs84(inp_point.point)
+            if (selected_polygon.intersectsCoordinate(wgs_cord)) {
+                cool.push(inp_point)
+            }
+        })
+
+        show_legend(label_cords, countRegionStats(cool))
     })
+}
+
+function countRegionStats(data) {
+    if (data.length == 0) {
+        return {
+            ordersCount: 0,
+            latesCount: 0,
+            deliveryTime: 0,
+            earnings: 0
+        }
+    }
+
+    let earnings = 0
+    let deliveryTime = 0
+
+    data.forEach(el => {
+        earnings += el.sum
+        deliveryTime += el.deliveryTime
+    })
+
+    return {
+        ordersCount: data.length,
+        latesCount: data.filter(el => el.lated).length,
+        deliveryTime: Math.floor(deliveryTime / data.length),
+        earnings: earnings
+    }
 }
 
 function removePolygonStats() {
@@ -81,12 +118,11 @@ function show_legend(point_loc, data) {
     $("#areaEarnings").text(data.earnings)
 }
 
-// function countStatistics() {
-//     let geometries = polygonSource.features.forEach(feature => feature.getGeometry())
-//     let poly = ol.geom.Polygon(geometries)
-//     let orders = JSON.parse(input_orders).filter(ord => (poly.intersectsCoordinate(point_to_wgs84(ord.point))))
-//     console.log(orders)
-// }
+function relocate_mapcenter(cord_point) {
+    console.log(cord_point.join())
+    map.getView().setCenter(point_to_wgs84("[" + cord_point.join() + "]"))
+    map.getView().setZoom(11)
+}
 
 function setup_OLMap() {
     hasSelection = false
