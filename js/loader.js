@@ -1,9 +1,8 @@
 $(function() {
-    next = _ => {
+    next = function() {
         setup_filters()
         setup_OLMap()
-        
     }
-    include_html(_ => next())
+    include_html(next)
     console.log("Loaded")
 })
