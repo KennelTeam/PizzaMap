@@ -142,7 +142,7 @@ function show_legend(point_loc, data) {
 
 function relocate_mapcenter(cord_point) {
     map.getView().setCenter(point_to_wgs84("[" + cord_point.join() + "]"))
-    map.getView().setZoom(11)
+    map.getView().setZoom(12)
 }
 
 function setup_OLMap() {
@@ -167,7 +167,7 @@ function setup_OLMap() {
         ],
         view: new ol.View({
             center: ol.proj.fromLonLat([39.954962, 57.651345]),
-            zoom: 11,
+            zoom: 12,
         })
     });
 
