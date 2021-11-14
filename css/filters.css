@@ -157,3 +157,71 @@ select option:checked {
     background-color: var(--ui-blue-02-color);
     color: var(--ui-blue-01-color);
 }
+
+/* remove second calendar */
+
+.daterangepicker .drp-calendar.right {
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+}
+
+.daterangepicker .drp-calendar.right tbody {
+    display: none !important;
+}
+
+.daterangepicker .drp-calendar.right thead > tr:nth-child(2) {
+    display: none !important;
+}
+
+.daterangepicker .drp-calendar.right th.month {
+    display: none !important;
+}
+
+.daterangepicker .drp-calendar.right .calendar-table {
+    background: transparent !important;
+}
+
+.daterangepicker .daterangepicker.ltr .ranges, .daterangepicker.ltr .drp-calendar {
+    float: none !important;
+}
+
+.daterangepicker .drp-calendar.right .daterangepicker_input {
+    position: absolute !important;
+}
+
+/* remove second calendar */
+
+
+/* remove buttons */
+.daterangepicker .drp-buttons {
+    display: none !important;
+}
+
+/* change calendar colors */
+.in-range {
+    background-color: var(--ui-blue-02-color) !important;
+}
+
+.start-date {
+    background-color: var(--ui-blue-01-color) !important;
+}   
+
+.end-date {
+    color: var(--primary-color);
+    background-color: var(--ui-blue-01-color) !important;
+}
+
+.daterangepicker {
+    /* color: var(--ui-blue-01-color); */
+}
+
+.daterangepicker .ranges {
+    /* color: var(--ui-blue-01-color); */
+}
+
+/* .datepicker table tr td.active,
+.datepicker table tr td.active:hover {
+    background: rgb(44, 16, 15);
+    text-shadow: none; */
+}

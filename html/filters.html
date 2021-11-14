@@ -30,7 +30,29 @@
     <label class="promo-input-label label" for="promoInput">Поиск по промокоду</label>
     <input class="promo-input form-control" placeholder="Все промокоды" type="text" id="promoInput" />
     <label class="period-label label">Период</label>
-    <input class="date-filter form-control" type="text" name="datefilter" value="01.11.2021 - 30.11.2021" />
+    <input class="date-filter form-control" type="text" name="datefilter" value="12/07/2020 - 12/24/2020" />
+
+    <script type="text/javascript">
+        $(function() {
+
+            $('input[name="datefilter"]').daterangepicker({
+                autoUpdateInput: true,
+                showButtonPanel: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+            
+            $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('DD.MM.YYYY') + ' - ' + picker.endDate.format('DD.MM.YYYY'));
+            });
+
+            $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+                $(this).val('');
+            });
+
+        });
+    </script>
 
     <div class="form-group row">
         <div class="col-sm">
