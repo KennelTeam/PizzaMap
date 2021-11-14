@@ -1,11 +1,18 @@
 @import "global.css";
 
-.fiters-container {
+.filters-container {
+    padding: 5%;
+    min-height: 55%;
     background: var(--white-color);
 
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
     border-radius: 3px;
 }
+
+.filters-container > * {
+    margin-bottom: 5%;
+}
+
 
 .label {
     font-family: Open Sans;
@@ -13,8 +20,10 @@
     font-weight: normal;
     font-size: 15px;
     line-height: 130%;
+    
+    margin-bottom: 2%;
+    
     color: var(--secondary-color);
-
 }
 
 .list-item {
@@ -95,6 +104,7 @@
 }
 
 .reset-filter-button {
+    margin-top: 5%;
     width: 100%;
     font-family: Open Sans;
     font-style: normal;
@@ -121,6 +131,7 @@
     font-weight: 600;
     font-size: 15px;
     line-height: 130%;
+    margin-bottom: -5%;
 
     color: var(--white-color);
     background: var(--ui-blue-01-color);
