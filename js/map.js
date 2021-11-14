@@ -18,6 +18,7 @@ function polygonStatsPressed() {
         map.removeInteraction(draw)
 
         // insert here function to call bigdata analysisS
+        countStatistics()
         show_legend(label_cords, {})
     })
 }
@@ -80,10 +81,12 @@ function show_legend(point_loc, data) {
     $("#areaEarnings").text(data.earnings)
 }
 
-function countStatistics() {
-    let orders = JSON.parse(input_orders).filter(ord => (polygonSource.geometry.intersects(point_to_wgs84(ord.point))))
-    console.log(orders)
-}
+// function countStatistics() {
+//     let geometries = polygonSource.features.forEach(feature => feature.getGeometry())
+//     let poly = ol.geom.Polygon(geometries)
+//     let orders = JSON.parse(input_orders).filter(ord => (poly.intersectsCoordinate(point_to_wgs84(ord.point))))
+//     console.log(orders)
+// }
 
 function setup_OLMap() {
     hasSelection = false
