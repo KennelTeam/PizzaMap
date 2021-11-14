@@ -1,1 +1,1 @@
-echo '<?php include_once("entire.html"); ?>'
+<?php include_once("entire.html"); ?>
