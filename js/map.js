@@ -84,7 +84,7 @@ function setup_OLMap() {
     hasSelection = false
     console.log("Setuping")
     map = new ol.Map({
-        // controls: ol.control.defaults().extend([panel]),
+        controls: [],
         target: "map",
         layers: [
             new ol.layer.Tile({
