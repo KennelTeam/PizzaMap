@@ -5,10 +5,7 @@
     "main": "start.js",
     "author": "nebolax",
     "license": "ISC",
-    "scripts": {
-        "start": "node build-scripts/start.js",
-        "build": "node build-scripts/build.js"
-    },
+
     "dependencies": {
         "child_process": "^1.0.2",
         "exec": "^0.2.1",
