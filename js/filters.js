@@ -27,7 +27,7 @@ function onShowFiltersButton() {
 
     function filterOrder(ord) {
         if (townDict[ord.locationId] != town) return false
-        if (!showLate && ord.lated) return false
+        if (showLate && !ord.lated) return false // ditch
         if (ord.sum < minSumOrder) return false
         if (!showNew && ord.status == 1) return false
         if (!showCanceled && ord.status == 2) return false
@@ -76,5 +76,19 @@ function setup_filters() {
     document.querySelector("#clearButton").onclick = onClearFilters
     seltownChanged({ target: { value: $("#townChoose").val() } })
 
-    JSON.parse(input_orders)
+    let prices = JSON.parse(input_orders).map(el => el.sum)
+
+    let min = 9999999
+    let max = 0
+
+    prices.forEach(price => {
+        if (price < min) {
+            min = price
+        }
+        if (price > max) {
+            max = price
+        }
+    })
+    console.log(min, max)
+
 }

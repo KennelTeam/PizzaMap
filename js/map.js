@@ -45,8 +45,6 @@ function polygonStatsPressed() {
         hasSelection = true
         map.removeInteraction(draw)
 
-        // insert here function to call bigdata analysisS
-        // console.log(curShowingData.filter())
         let selected_polygon = new ol.geom.Polygon(event.feature.getGeometry().getCoordinates())
 
         let cool = []
@@ -95,7 +93,6 @@ function removePolygonStats() {
 }
 
 function changeCity(cityPoint) {
-    console.log(map)
     view = map.getView()
     view.setCenter(point_to_wgs84(cityPoint))
     view.setZoom(11)
@@ -127,13 +124,10 @@ var popupDOM
 // point has to be array of floats, not string
 function show_legend(point_loc, data) {
     // ol3_sprint_location = ol.proj.transform(point, 'EPSG:4326', 'EPSG:3857');
-    console.log(point_loc)
     popupDOM.style.display = "block"
 
     popup_pos = map.getPixelFromCoordinate(point_loc)
-    console.log(popup_pos)
     popup_width = document.getElementById("popup").offsetWidth
-    console.log(popup_width)
     popup_pos[0] -= popup_width + 10
     popup_pos[1] -= 10
     cord_popup_pos = map.getCoordinateFromPixel(popup_pos)
@@ -147,14 +141,12 @@ function show_legend(point_loc, data) {
 }
 
 function relocate_mapcenter(cord_point) {
-    console.log(cord_point.join())
     map.getView().setCenter(point_to_wgs84("[" + cord_point.join() + "]"))
     map.getView().setZoom(11)
 }
 
 function setup_OLMap() {
     hasSelection = false
-    console.log("Setuping")
     map = new ol.Map({
         controls: [],
         target: "map",
