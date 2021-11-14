@@ -75,4 +75,6 @@ function setup_filters() {
 
     document.querySelector("#clearButton").onclick = onClearFilters
     seltownChanged({ target: { value: $("#townChoose").val() } })
+
+    JSON.parse(input_orders)
 }

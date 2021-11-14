@@ -5,6 +5,34 @@ function point_to_wgs84(inp_point) {
 }
 
 
+function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+function formatTimeMinutes(inp_minutes) {
+    let hours = Math.floor(inp_minutes / 60)
+    let minutes = inp_minutes % 60
+
+    let res = ""
+    if (hours >= 10) {
+        res += hours
+    } else {
+        res += "0"
+        res += hours
+    }
+
+    res += ":"
+
+    if (minutes >= 10) {
+        res += minutes
+    } else {
+        res += "0"
+        res += minutes
+    }
+
+    return res
+}
+
 function polygonStatsPressed() {
     if (hasSelection) return
     draw = new ol.interaction.Draw({
@@ -53,10 +81,10 @@ function countRegionStats(data) {
     })
 
     return {
-        ordersCount: data.length,
+        ordersCount: numberWithSpaces(data.length),
         latesCount: data.filter(el => el.lated).length,
-        deliveryTime: Math.floor(deliveryTime / data.length),
-        earnings: earnings
+        deliveryTime: formatTimeMinutes(Math.floor(deliveryTime / data.length)),
+        earnings: numberWithSpaces(earnings)
     }
 }
 
