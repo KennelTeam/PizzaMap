@@ -1,5 +1,4 @@
 @import "global.css";
-
 .legend {
     max-width: 100%;
     width: 1400px;
@@ -20,9 +19,7 @@
     font-weight: bold;
     font-size: 40px;
     line-height: 120%;
-
     white-space: nowrap;
-
     color: var(--primary-color);
 }
 
@@ -33,7 +30,6 @@
     padding: 0;
     left: auto;
     top: 20px;
-
     background: linear-gradient(90deg, #05BC58 0%, #B1DF03 24.75%, #FFFE01 51.7%, #FF3104 75.98%, #9A2504 100%);
     border-radius: 3px;
 }
@@ -42,15 +38,17 @@
     position: relative;
     width: 30px;
     top: 25px;
-
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 130%;
     text-align: center;
-
     color: var(--primary-color);
+}
+
+.progress-bar-block {
+    margin-right: 40px;
 }
 
 .value-1 {
@@ -61,5 +59,4 @@
 .value-5 {
     text-align: right;
     padding-right: 0;
-
 }

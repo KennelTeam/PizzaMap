@@ -7,7 +7,7 @@ function formatNumber(num) {
 
 function showStatistics(orders_data) {
     let numberOrders = orders_data.length
-    let numberLate = orders_data.filter(el => el.lated ).length
+    let numberLate = orders_data.filter(el => el.lated).length
     let mediumTime = Math.round(orders_data.reduce((prev, current) => prev + current.deliveryTime, 0) / numberOrders)
     let proceeds = orders_data.reduce((prev, current) => prev + current.sum, 0)
     console.log(`number: ${numberOrders}, number late: ${numberLate},\nmedium time: ${mediumTime}, proceeds: ${proceeds}`)
@@ -15,4 +15,12 @@ function showStatistics(orders_data) {
     document.getElementById("numberLateStat").innerHTML = formatNumber(numberLate)
     document.getElementById("mediumTimeStat").innerHTML = `${Math.floor(mediumTime / 60)}:${mediumTime % 60}`
     document.getElementById("proceedsStat").innerHTML = formatNumber(proceeds) + " ₽"
+
+    for (let i = 0; i < 5; i++) {
+        let target_id = "#legend-progress" + i
+        console.log(target_id)
+        $(target_id).text(
+            Math.round(numberOrders * i / 4).toString()
+        )
+    }
 }

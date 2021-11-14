@@ -49,7 +49,7 @@ function onClearFilters() {
     $("#orderSum").val('0')
     $("#promoInput").val('')
     let now = new Date()
-    $("[name='datefilter']").val(`01.01.2000 - ${now.getDate()}.${now.getMonth() + 1}.${now.getFullYear()}`)
+    $("[name='datefilter']").val(`01.01.2011 - ${now.getDate()}.${now.getMonth() + 1}.${now.getFullYear()}`)
 
     curShowingData = JSON.parse(input_orders).filter(ord => townDict[ord.locationId] == town)
     showStatistics(curShowingData)
