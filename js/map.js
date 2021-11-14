@@ -80,6 +80,11 @@ function show_legend(point_loc, data) {
     $("#areaEarnings").text(data.earnings)
 }
 
+function countStatistics() {
+    let orders = JSON.parse(input_orders).filter(ord => (polygonSource.geometry.intersects(point_to_wgs84(ord.point))))
+    console.log(orders)
+}
+
 function setup_OLMap() {
     hasSelection = false
     console.log("Setuping")
