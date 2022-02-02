@@ -6,9 +6,10 @@ Result is on heroku - [link](https://pizzamap.herokuapp.com/)
 
 ### Installation and running locally
 
-1. Install http-server node library
-2. Run npm start
-3. Go to localhost:8080/entire.html
+1. Clone repository
+2. Install http-server node library
+3. Run npm start
+4. Go to localhost:8080/entire.html
 
 ## Functionality
 
